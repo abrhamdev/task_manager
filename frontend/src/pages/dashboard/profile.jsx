@@ -34,7 +34,7 @@ const Profile = () => {
   return (
     <div className="min-h-screen flex bg-gray-100">
       <SideBar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}/>
-      <Bars3Icon className="ml-6 fixed self-start mt-14 w-8 hover:text-red-400" onClick={()=>{setIsSidebarOpen(!isSidebarOpen)}} />
+      <Bars3Icon className="ml-6 fixed self-start mt-10 w-6 hover:text-red-400" onClick={()=>{setIsSidebarOpen(!isSidebarOpen)}} />
       <motion.main
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}

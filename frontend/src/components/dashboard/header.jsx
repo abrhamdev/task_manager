@@ -72,8 +72,8 @@ const Header = ({ prop }) => {
 
   return (
     <>
-      <header className="flex justify-between items-center bg-white p-4 shadow-sm rounded-lg">
-        <h1 className="text-xl font-bold text-gray-800">{prop}</h1>
+      <header className="flex justify-between items-center bg-white py-1 shadow-sm rounded-lg">
+        <h1 className="text-xl ml-2 font-bold text-gray-800">{prop}</h1>
         <div className="items-center hidden md:flex">
           <input
             type="text"

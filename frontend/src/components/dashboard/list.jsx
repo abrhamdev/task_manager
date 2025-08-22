@@ -72,7 +72,7 @@ const List = ({ option }) => {
 
   return (
     <div>
-      { checkedList.length !==0 && <TrashIcon className="w-6 float-end text-black hover:text-red-500" onClick={deleteTasks}/>}
+      { checkedList?.length !==0 && <TrashIcon className="w-6 float-end text-black hover:text-red-500" onClick={deleteTasks}/>}
       {tasks.length !== 0 && (
         <Link to="/dashboard/taskform">
           <div className="flex cursor-pointer float-end hover:text-blue-500">

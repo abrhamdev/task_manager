@@ -6,6 +6,6 @@ function Logout(){
   else if(sessionStorage.getItem("authtoken")){
     sessionStorage.removeItem("authtoken");
   }
-  window.location.href="/login";
+  window.location.href="/";
 };
 export default Logout;
