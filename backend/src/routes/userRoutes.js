@@ -1,8 +1,8 @@
 import express from "express";
-import {registerUser,login} from "../controllers/userController.js";
+import {registerUser,login} from "../controllers/mongoUserController.js";
 import { authenticate } from "../middlewares/authMiddleware.js";
-import { getUserData } from "../controllers/getUserData.js";
-import { getUserProfile } from "../controllers/getUserProfile.js";
+import { getUserData } from "../controllers/mongoGetUserData.js";
+import { getUserProfile } from "../controllers/mongoGetUserProfile.js";
 
 const userRouter=express.Router();
 

@@ -1,5 +1,5 @@
 import express from "express";
-import { List,CreateTask,Delete, GetTask,DeleteTasks, searchTask, UpdateTask } from "../controllers/taskController.js";
+import { List,CreateTask,Delete, GetTask,DeleteTasks, searchTask, UpdateTask } from "../controllers/mongoTaskController.js";
 const taskRouter=express.Router();
 
 taskRouter.post("/list",List);
