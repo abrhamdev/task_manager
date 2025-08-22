@@ -7,10 +7,15 @@ const DescriptionSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <div className="relative py-24 overflow-hidden bg-gradient-to-br from-gray-900 to-blue-900">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-blue-500/10 to-transparent"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl"></div>
+    <div className="relative py-24 overflow-hidden">
+      {/* Original background layers removed to make the component transparent.
+        
+        The following lines were removed:
+        - The main div's background class: "bg-gradient-to-br from-gray-900 to-blue-900"
+        - The background decorative elements:
+          <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-blue-500/10 to-transparent"></div>
+          <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl"></div>
+      */}
       
       <div className="relative container mx-auto px-6">
         <div className="flex flex-col items-center">
@@ -94,13 +99,15 @@ const DescriptionSection = () => {
             className="mt-20 max-w-4xl text-center"
           >
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl blur-lg opacity-50"></div>
-              <div className="relative bg-gray-800/30 backdrop-blur-md rounded-2xl p-10 border border-white/10">
+              {/* Original blurred background div was removed from here
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl blur-lg opacity-50"></div>
+              */}
+              <div className="relative backdrop-blur-md rounded-2xl p-10 border border-white/10">
                 <p className="text-2xl md:text-3xl font-light text-white leading-relaxed">
                   Unleash your productivity with our cutting-edge Task Manager. Whether you're juggling personal goals or collaborating with your team, our tool simplifies task management so you can focus on what truly matters.
                 </p>
                 
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.5, delay: 1.2 }}

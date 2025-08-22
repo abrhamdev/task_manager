@@ -63,7 +63,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative flex  justify-center items-center  w-full max-w-5xl mx-auto overflow-hidden h-[500px]">
+    <div className="relative flex justify-center items-center w-full max-w-5xl mx-auto overflow-hidden h-[500px]">
       {cards.map((card, index) => {
         const position = getCardPosition(index);
 
@@ -72,10 +72,10 @@ const Carousel = () => {
             key={card.id}
             className={ `absolute ${
               position === "center"
-              ? "z-20 scale-110"
-              : position === "left" || position === "right"
-              ? "z-10 scale-90"
-              : "hidden"
+                ? "z-20 scale-110"
+                : position === "left" || position === "right"
+                ? "z-10 scale-90"
+                : "hidden"
             }`}
             animate={{
               x:
@@ -95,7 +95,7 @@ const Carousel = () => {
               scale: { duration:0.5 },
             }}
           >
-            <div className="w-64 mr-10 ml-10 bg-white rounded-lg shadow-md dark:bg-gray-800 dark:text-white">
+            <div className="w-64 mr-10 ml-10 rounded-lg shadow-md dark:bg-gray-800 dark:text-white">
               <img
                 className="object-cover w-full h-40 rounded-t-lg"
                 src={card.imgSrc}

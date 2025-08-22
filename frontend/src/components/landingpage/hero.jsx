@@ -18,18 +18,21 @@ const HeroSection = () => {
 
   return (
     <div className="relative overflow-hidden min-h-screen flex items-center">
-      {/* Background with gradient and subtle pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-black opacity-95 z-0"></div>
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CiAgPHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPgogIDxwYXRoIGQ9Ik0zMCAzMG0tMjggMGEyOCwyOCAwIDEsMSA1NiwwYTI4LDI4IDAgMSwxIC01NiwwIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4=')] opacity-20 z-0"></div>
-      
-      {/* Animated background elements */}
+      {/* Original background layers removed to make the component transparent.
+        
+        The following lines were removed:
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-black opacity-95 z-0"></div>
+        <div className="absolute inset-0 bg-[url('...')] opacity-20 z-0"></div>
+      */}
+
+      {/* Animated background elements (now transparent) */}
       <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-20 animate-pulse-slow"></div>
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-15 animate-pulse-slower"></div>
 
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <motion.div 
+          <motion.div
             ref={ref}
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -37,7 +40,7 @@ const HeroSection = () => {
             className="flex flex-col space-y-8"
           >
             <div className="space-y-4">
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 10 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
@@ -45,8 +48,8 @@ const HeroSection = () => {
               >
                 Master Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Productivity</span>
               </motion.h1>
-              
-              <motion.p 
+
+              <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
@@ -54,8 +57,8 @@ const HeroSection = () => {
               >
                 Stay Organized, Be Productive: Manage Your Tasks Efficiently with Our Intuitive Platform
               </motion.p>
-              
-              <motion.p 
+
+              <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
@@ -64,15 +67,15 @@ const HeroSection = () => {
                 Task Manager helps you stay on top of your to-do list, collaborate with your team, and track progress effortlessly.
               </motion.p>
             </div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.8, ease: "easeOut" }}
               className="flex flex-col sm:flex-row gap-4 mt-6"
             >
               <Link
-                to="/login"
+                to="/signup"
                 className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium text-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl flex items-center justify-center"
               >
                 Get Started Now
@@ -80,13 +83,13 @@ const HeroSection = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                 </svg>
               </Link>
-              
+
               <button className="px-8 py-4 rounded-xl bg-white/10 text-white font-medium text-lg backdrop-blur-sm border border-white/10 hover:bg-white/20 transition-all duration-300">
                 Learn More
               </button>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.7, delay: 1, ease: "easeOut" }}
@@ -100,7 +103,7 @@ const HeroSection = () => {
                 </div>
                 <span>Intuitive Interface</span>
               </div>
-              
+
               <div className="flex items-center">
                 <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center mr-3">
                   <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -111,21 +114,21 @@ const HeroSection = () => {
               </div>
             </motion.div>
           </motion.div>
-          
+
           {/* Image Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
             className="flex justify-center lg:justify-end relative"
           >
             <div className="relative">
-              {/* Glass-morphism card effect */}
+              {/* Glass-morphism card effect (now transparent) */}
               <div className="absolute -inset-4 bg-blue-500/10 rounded-2xl backdrop-blur-xl border border-white/10 rotate-3"></div>
               <div className="absolute -inset-2 bg-purple-500/10 rounded-xl backdrop-blur-lg border border-white/5 -rotate-3"></div>
-              
+
               <motion.div
-                className="relative bg-gray-800/30 rounded-2xl p-6 backdrop-blur-md border border-white/10 shadow-2xl"
+                className="relative rounded-2xl p-6 backdrop-blur-md border border-white/10 shadow-2xl"
                 animate={{
                   scale: iszoomedin ? 1.03 : 1,
                   rotate: iszoomedin ? 0.5 : -0.5,
@@ -141,9 +144,9 @@ const HeroSection = () => {
                   alt="Task Management Illustration"
                 />
               </motion.div>
-              
-              {/* Floating elements */}
-              <motion.div 
+
+              {/* Floating elements (now transparent) */}
+              <motion.div
                 className="absolute -top-4 -right-4 bg-blue-500/80 backdrop-blur-sm text-white text-xs font-medium px-3 py-2 rounded-lg shadow-lg"
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -151,8 +154,8 @@ const HeroSection = () => {
               >
                 Organize Tasks
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className="absolute -bottom-4 -left-4 bg-purple-500/80 backdrop-blur-sm text-white text-xs font-medium px-3 py-2 rounded-lg shadow-lg"
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -164,9 +167,9 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
-      
+
       {/* Scroll indicator */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
